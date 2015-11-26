@@ -1,25 +1,24 @@
 package module3;
 
 //Java utilities libraries
+
 import java.util.ArrayList;
 //import java.util.Collections;
 //import java.util.Comparator;
 import java.util.List;
-
-//Processing library
-import processing.core.PApplet;
-
 //Unfolding libraries
 import de.fhpotsdam.unfolding.UnfoldingMap;
-import de.fhpotsdam.unfolding.marker.Marker;
 import de.fhpotsdam.unfolding.data.PointFeature;
+import de.fhpotsdam.unfolding.marker.Marker;
 import de.fhpotsdam.unfolding.marker.SimplePointMarker;
 import de.fhpotsdam.unfolding.providers.Google;
 import de.fhpotsdam.unfolding.providers.MBTilesMapProvider;
 import de.fhpotsdam.unfolding.utils.MapUtils;
-
+import jogamp.graph.font.typecast.ot.table.CmapFormat.Range;
 //Parsing library
 import parsing.ParseFeed;
+//Processing library
+import processing.core.PApplet;
 
 /** EarthquakeCityMap
  * An application with an interactive map displaying earthquake data.
@@ -27,6 +26,7 @@ import parsing.ParseFeed;
  * @author Your name here
  * Date: July 17, 2015
  * */
+@SuppressWarnings("unused")
 public class EarthquakeCityMap extends PApplet {
 
 	// You can ignore this.  It's to keep eclipse from generating a warning.
@@ -76,10 +76,13 @@ public class EarthquakeCityMap extends PApplet {
 	    // These print statements show you (1) all of the relevant properties 
 	    // in the features, and (2) how to get one property and use it
 	    if (earthquakes.size() > 0) {
-	    	PointFeature f = earthquakes.get(0);
-	    	System.out.println(f.getProperties());
-	    	Object magObj = f.getProperty("magnitude");
-	    	float mag = Float.parseFloat(magObj.toString());
+	    	for (int i = 0; i<10; i++) {
+				System.out.println(i);
+		    	PointFeature f = earthquakes.get(i);
+		    	System.out.println(f.getProperties());
+		    	Object magObj = f.getProperty("magnitude");
+		    	float mag = Float.parseFloat(magObj.toString());
+	    	}
 	    	// PointFeatures also have a getLocation method
 	    }
 	    
