@@ -72,7 +72,6 @@ public class EarthquakeCityMap extends PApplet {
 	    //Use provided parser to collect properties for each earthquake
 	    //PointFeatures have a getLocation method
 	    List<PointFeature> earthquakes = ParseFeed.parseEarthquake(this, earthquakesURL);
-	    
 	    // These print statements show you (1) all of the relevant properties 
 	    // in the features, and (2) how to get one property and use it
 	    if (earthquakes.size() > 0) {
