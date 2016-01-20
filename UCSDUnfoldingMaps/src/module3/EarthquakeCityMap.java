@@ -80,6 +80,7 @@ public class EarthquakeCityMap extends PApplet {
 		    	PointFeature f = earthquakes.get(i);
 		    	System.out.println(f.getProperties());
 		    	Object magObj = f.getProperty("magnitude");
+		    	System.out.println(f.getLocation());
 		    	float mag = Float.parseFloat(magObj.toString());
 	    	}
 	    	// PointFeatures also have a getLocation method
